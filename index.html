@@ -268,7 +268,8 @@
               this.temp = {};
             },
             priceTotal() {
-              this.orderTotal = this.productsOrder.reduce((acc, obj) => acc + obj.total, 0 )
+              this.orderTotal = 0;
+              this.productsOrder.forEach( item => this.orderTotal += item.total );
             },
             productsClick(item) {
               if (this.temp.name == item.name) {
